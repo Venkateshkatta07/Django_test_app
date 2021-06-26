@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+{% extends 'basic_app/base.html' %}
+{% load static %}
+
+{% block my_body_block %}
+
+<div class="jumbotron">
+    <h1>This is my register.html page</h1>
+
+    {% if registered %}
+        <h1>Thanks for registering!</h1>
+    {% else %}
+        <h1>Please register here!</h1>
+        <h3>Fill out the form:</h3>
+
+        <form class="container-fluid" enctype="multipart/form-data" method="post" >
+            {% csrf_token %}
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+            <button type="submit" value="register" class="btn btn-dark">Register</button>
+
+        </form>
+
+    {% endif %}
+</div>
+
+
+
+{% endblock %}

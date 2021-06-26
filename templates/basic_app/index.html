@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+
+{% extends 'basic_app/base.html' %}
+{% block my_body_block %}
+{% load static %}
+<div class="jumbotron">
+    
+    <div class="text-center">
+        <h1>This is my index page</h1>
+    <img class="img-thumbnail rounded-circle col-md-4" src= "{% static 'images/vk_picture.jpg' %}" alt="">
+</div>
+</div>
+
+
+
+{% endblock %}
